@@ -3,12 +3,14 @@ import React from 'react';
 
 export default function currencyRow(props) {
     const {
-        currencyOptions
+        currencyOptions,
+        selectedCurrency, 
+        onChangeCurrency
     } = props
     return (
         <div>
             <input type="number" className="input"/>
-            <select>
+            <select value={selectedCurrency} onChange={onChangeCurrency}>
                 {currencyOptions.map(option => (
                     <option value={option} key={option}>{option}</option>
                 ))}
